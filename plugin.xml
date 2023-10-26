@@ -42,7 +42,7 @@ limitations under the License.
       <config></config>
       <pods use-frameworks="true">
         <!-- <pod name="Siren" /> -->
-         <pod id="Siren" git="https://github.com/bbialas/Siren" />
+         <pod name="Siren" git="https://github.com/bbialas/Siren" />
       </pods>
     </podspec>
   </platform>
