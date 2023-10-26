@@ -14,23 +14,14 @@
   limitations under the License.
 -->
 
-cordova-plugin-update-notifier
-==============================
+# cordova-plugin-update-notifier
 
 This plugin provides a mechanism for showing an in-app notification when a new
-version of the app is available for download from the App Store or Play Store.
+version of the app is available for download from the App Store.
 
 For iOS, this uses the [Siren][siren] library.
 
-For Android, this implements the [Play Store In-App Update][playlib] system.
-
-> ℹ️ **This plugin uses AndroidX!**
->
-> Use version 1.x if you are building without AndroidX enabled.
-
-
-Installation
-------------
+## Installation
 
 ### Cordova
 
@@ -45,18 +36,7 @@ npm install cordova-plugin-update-notifier
 npx cap sync
 ```
 
-#### Note about Android strings for Capacitor
-
-To override the text shown in the banner when an update is ready to install,
-add the following to `app/src/main/res/values/strings.xml`:
-
-```xml
-<string name="app_update_ready">An update has just been downloaded.</string>
-<string name="app_update_install">RESTART</string>
-```
-
-Configuration Preferences
-------------
+## Configuration Preferences
 
 ### Alert Type
 
@@ -65,12 +45,6 @@ Siren's implementation for iOS allows for different alert types (see https://git
 ```xml
 <preference name="SirenAlertType" value="critical" />
 <preference name="SirenAlertType" value="annoying" />
-```
-
-For Android, you can force all updates to be considered "immediate" with the `AndroidUpdateAlertType` preference in config.xml.
-
-```xml
-<preference name="AndroidUpdateAlertType" value="Immediate" />
 ```
 
 ### Non US-AppStore iOS apps
@@ -83,21 +57,16 @@ Siren's implementation for iOS requires specifying a country code if your app is
 
 For Capacitor, add `"SirenCountryCode": "CA"` to your capacitor.config.json file.
 
-
 ### Managed App Configuration
 
 When deploying an app using an MDM, you can take advantage of [Managed App Configuration](https://developer.apple.com/library/archive/samplecode/sc2279/Introduction/Intro.html) to disable the update check. Simply create a preference called "DisableUpdateCheck" and set it's value to "true".
 
-Supported Platforms
--------------------
+## Supported Platforms
 
-* **Cordova CLI** (cordova-cli >= 9.0.0)
-* **iOS** (cordova-ios >= 5.0.0, or capacitor)
-* **Android** (cordova-android >= 9.0.0, or capacitor) with AndroidX
+-   **Cordova CLI** (cordova-cli >= 9.0.0)
+-   **iOS** (cordova-ios >= 5.0.0, or capacitor)
 
-
-Contributing
-------------
+## Contributing
 
 Contributions of bug reports, feature requests, and pull requests are greatly
 appreciated!
@@ -106,13 +75,10 @@ Please note that this project is released with a [Contributor Code of
 Conduct][coc]. By participating in this project you agree to abide by its
 terms.
 
+## Licence
 
-Licence
--------
-
-Released under the Apache 2.0 Licence.  
+Released under the Apache 2.0 Licence.
 Copyright © 2020-2021 Ayogo Health Inc.
 
 [siren]: https://sabintsev.com/Siren/
-[playlib]: https://developer.android.com/guide/playcore/in-app-updates
 [coc]: https://github.com/AyogoHealth/cordova-plugin-update-notifier/blob/main/CODE_OF_CONDUCT.md
